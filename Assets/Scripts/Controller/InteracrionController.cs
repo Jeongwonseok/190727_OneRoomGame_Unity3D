@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteracrionController : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class InteracrionController : MonoBehaviour
 
     [SerializeField] GameObject go_NormalCrosshair;
     [SerializeField] GameObject go_InteractiveCrosshair;
+    [SerializeField] GameObject go_Crosshair;
+    [SerializeField] GameObject go_Cursor;
+    [SerializeField] GameObject go_TargetNameBar;
+    [SerializeField] Text txt_TargetName;
 
     bool isContact = false;
     public static bool isInteract = false;
@@ -17,6 +22,12 @@ public class InteracrionController : MonoBehaviour
     [SerializeField] ParticleSystem ps_QuestionEffect;
 
     DialogueManager theDM;
+
+    public void HideUI()
+    {
+        go_Cursor.SetActive(false);
+        go_Crosshair.SetActive(false);
+    }
 
     void Start()
     {
@@ -46,22 +57,22 @@ public class InteracrionController : MonoBehaviour
 
     void Contact()
     {
-        if(!isInteract)
+        if (hitInfo.transform.CompareTag("Interaction"))
         {
-            if (hitInfo.transform.CompareTag("Interaction"))
-            {
-                if (!isContact)
-                {
-                    isContact = true;
-                    go_InteractiveCrosshair.SetActive(true);
-                    go_NormalCrosshair.SetActive(false);
-                }
+            go_TargetNameBar.SetActive(true);
+            txt_TargetName.text = hitInfo.transform.GetComponent<InteractionType>().GetName();
 
-            }
-            else
+            if (!isContact)
             {
-                NotContact();
+                isContact = true;
+                go_InteractiveCrosshair.SetActive(true);
+                go_NormalCrosshair.SetActive(false);
             }
+
+        }
+        else
+        {
+            NotContact();
         }
         
     }
@@ -70,6 +81,8 @@ public class InteracrionController : MonoBehaviour
     {
         if(isContact)
         {
+            go_TargetNameBar.SetActive(false);
+
             isContact = false;
             go_InteractiveCrosshair.SetActive(false);
             go_NormalCrosshair.SetActive(true);
@@ -88,7 +101,6 @@ public class InteracrionController : MonoBehaviour
                 }
             }
         }
-
     }
 
     void Interact()

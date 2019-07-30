@@ -14,10 +14,18 @@ public class DialogueManager : MonoBehaviour
 
     bool isDialogue = false;
 
+    InteracrionController theIC;
+
+    void Start()
+    {
+        theIC = FindObjectOfType<InteracrionController>();  
+    }
+
     public void ShowDialogue()
     {
         txt_Dialogue.text = "";
         txt_Name.text = "";
+        theIC.HideUI();
 
         SettingUI(true);
     }
