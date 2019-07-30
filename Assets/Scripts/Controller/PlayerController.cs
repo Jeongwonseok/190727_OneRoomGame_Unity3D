@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform tf_Crosshair;
 
     [SerializeField] Transform tf_Cam;
-
+    [SerializeField] Vector2 camBoundary; // 캠의 가두기 영역
+    [SerializeField] float sightMoveSpeed; // 좌우 움직임 스피드
     [SerializeField] float sightSensivitity; // 고개의 움직임 속도
     [SerializeField] float lookLimitX;
     [SerializeField] float lookLimitY;
@@ -21,7 +22,51 @@ public class PlayerController : MonoBehaviour
     {
         CrosshairMoving();
         ViewMoving();
+        KeyViewMoving();
+        CameraLimit();
         
+    }
+
+    void CameraLimit()
+    {
+        if(tf_Cam.localPosition.x >= camBoundary.x)
+        {
+            tf_Cam.localPosition = new Vector3(camBoundary.x,tf_Cam.localPosition.y, tf_Cam.localPosition.z);
+        }
+        else if (tf_Cam.localPosition.x <= -camBoundary.x)
+        {
+            tf_Cam.localPosition = new Vector3(-camBoundary.x, tf_Cam.localPosition.y, tf_Cam.localPosition.z);
+        }
+
+        if (tf_Cam.localPosition.y >= 1 + camBoundary.y)
+        {
+            tf_Cam.localPosition = new Vector3(tf_Cam.localPosition.x,1+ camBoundary.y, tf_Cam.localPosition.z);
+        }
+        else if (tf_Cam.localPosition.y <= 1 - camBoundary.y)
+        {
+            tf_Cam.localPosition = new Vector3(tf_Cam.localPosition.x, 1 - camBoundary.y, tf_Cam.localPosition.z);
+        }
+    }
+
+    void KeyViewMoving()
+    {
+        if(Input.GetAxisRaw("Horizontal") != 0)
+        {
+            currentAngleY += sightSensivitity * Input.GetAxisRaw("Horizontal");
+            currentAngleY = Mathf.Clamp(currentAngleY, -lookLimitX, lookLimitX);
+
+            tf_Cam.localPosition = new Vector3(tf_Cam.localPosition.x + sightMoveSpeed * Input.GetAxisRaw("Horizontal"), tf_Cam.localPosition.y, tf_Cam.localPosition.z);
+        }
+
+        if (Input.GetAxisRaw("Vertical") != 0)
+        {
+            currentAngleX += sightSensivitity * -Input.GetAxisRaw("Vertical");
+            currentAngleX = Mathf.Clamp(currentAngleX, -lookLimitY, lookLimitY);
+
+            tf_Cam.localPosition = new Vector3(tf_Cam.localPosition.x, tf_Cam.localPosition.y + sightMoveSpeed * Input.GetAxisRaw("Vertical"), tf_Cam.localPosition.z);
+        }
+
+        tf_Cam.localEulerAngles = new Vector3(currentAngleX, currentAngleY, tf_Cam.localEulerAngles.z);
     }
 
     void ViewMoving()
@@ -30,13 +75,18 @@ public class PlayerController : MonoBehaviour
         {
             currentAngleY += (tf_Crosshair.localPosition.x > 0) ? sightSensivitity : -sightSensivitity;
             currentAngleY = Mathf.Clamp(currentAngleY, -lookLimitX, lookLimitX);
-            
+
+            float t_applySpeed = (tf_Crosshair.localPosition.x > 0) ? sightMoveSpeed : -sightMoveSpeed;
+            tf_Cam.localPosition = new Vector3(tf_Cam.localPosition.x + t_applySpeed, tf_Cam.localPosition.y, tf_Cam.localPosition.z);
         }
 
         if (tf_Crosshair.localPosition.y > (Screen.height / 2 - 100) || tf_Crosshair.localPosition.y < (-Screen.height / 2 + 100))
         {
             currentAngleX += (tf_Crosshair.localPosition.y > 0) ? -sightSensivitity : sightSensivitity;
             currentAngleX = Mathf.Clamp(currentAngleX, -lookLimitY, lookLimitY);
+
+            float t_applySpeed = (tf_Crosshair.localPosition.y > 0) ? sightMoveSpeed : -sightMoveSpeed;
+            tf_Cam.localPosition = new Vector3(tf_Cam.localPosition.x, tf_Cam.localPosition.y + t_applySpeed, tf_Cam.localPosition.z);
 
         }
 
