@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/InteracrionController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Effects/Disappear.cs">
     <Files>
       <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="58" Column="6" />
       <File FileName="Assets/Scripts/Effects/Spin.cs" Line="16" Column="5" />
-      <File FileName="Assets/Scripts/Controller/InteracrionController.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/Controller/InteracrionController.cs" Line="82" Column="1" />
+      <File FileName="Assets/Scripts/Effects/QuestionEffect.cs" Line="28" Column="34" />
+      <File FileName="Assets/Scripts/Effects/Disappear.cs" Line="7" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,10 +13,10 @@
           <Node name="OneRoom" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Controller" expanded="True">
-                  <Node name="InteracrionController.cs" selected="True" />
+                <Node name="Controller" expanded="True" />
+                <Node name="Effects" expanded="True">
+                  <Node name="Disappear.cs" selected="True" />
                 </Node>
-                <Node name="Effects" expanded="True" />
               </Node>
             </Node>
           </Node>

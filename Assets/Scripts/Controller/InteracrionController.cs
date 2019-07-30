@@ -12,11 +12,15 @@ public class InteracrionController : MonoBehaviour
     [SerializeField] GameObject go_InteractiveCrosshair;
 
     bool isContact = false;
+    bool isInteract = false;
+
+    [SerializeField] ParticleSystem ps_QuestionEffect;
 
     // Update is called once per frame
     void Update()
     {
         CheckObject();
+        ClickLeftBtn();
     }
 
     void CheckObject()
@@ -59,5 +63,26 @@ public class InteracrionController : MonoBehaviour
             go_InteractiveCrosshair.SetActive(false);
             go_NormalCrosshair.SetActive(true);
         }
+    }
+
+    void ClickLeftBtn()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            if(isContact)
+            {
+                Interact();
+            }
+        }
+    }
+
+    void Interact()
+    {
+        isInteract = true;
+
+        ps_QuestionEffect.gameObject.SetActive(true);
+        Vector3 t_targetPos = hitInfo.transform.position;
+        ps_QuestionEffect.GetComponent<QuestionEffect>().SetTarget(t_targetPos);
+        ps_QuestionEffect.transform.position = cam.transform.position;
     }
 }
