@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Effects\Disappear.cs" />
     <Compile Include="Assets\Scripts\Effects\QuestionEffect.cs" />
     <Compile Include="Assets\Scripts\Effects\Spin.cs" />
+    <Compile Include="Assets\Scripts\Manager\DialogueManager.cs" />
     <None Include="Assets\Imports\_Barking_Dog\Readme_Please.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/jws/unity/OneRoom/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

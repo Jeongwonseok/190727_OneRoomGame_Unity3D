@@ -12,9 +12,16 @@ public class InteracrionController : MonoBehaviour
     [SerializeField] GameObject go_InteractiveCrosshair;
 
     bool isContact = false;
-    bool isInteract = false;
+    public static bool isInteract = false;
 
     [SerializeField] ParticleSystem ps_QuestionEffect;
+
+    DialogueManager theDM;
+
+    void Start()
+    {
+        theDM = FindObjectOfType<DialogueManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,20 +46,24 @@ public class InteracrionController : MonoBehaviour
 
     void Contact()
     {
-        if(hitInfo.transform.CompareTag("Interaction"))
+        if(!isInteract)
         {
-            if(!isContact)
+            if (hitInfo.transform.CompareTag("Interaction"))
             {
-                isContact = true;
-                go_InteractiveCrosshair.SetActive(true);
-                go_NormalCrosshair.SetActive(false);
-            }
+                if (!isContact)
+                {
+                    isContact = true;
+                    go_InteractiveCrosshair.SetActive(true);
+                    go_NormalCrosshair.SetActive(false);
+                }
 
+            }
+            else
+            {
+                NotContact();
+            }
         }
-        else
-        {
-            NotContact();
-        }
+        
     }
 
     void NotContact()
@@ -67,13 +78,17 @@ public class InteracrionController : MonoBehaviour
 
     void ClickLeftBtn()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(!isInteract)
         {
-            if(isContact)
+            if (Input.GetMouseButtonDown(0))
             {
-                Interact();
+                if (isContact)
+                {
+                    Interact();
+                }
             }
         }
+
     }
 
     void Interact()
@@ -84,5 +99,15 @@ public class InteracrionController : MonoBehaviour
         Vector3 t_targetPos = hitInfo.transform.position;
         ps_QuestionEffect.GetComponent<QuestionEffect>().SetTarget(t_targetPos);
         ps_QuestionEffect.transform.position = cam.transform.position;
+
+        StartCoroutine(WaitCollision());
+    }
+
+    IEnumerator WaitCollision()
+    {
+        yield return new WaitUntil(() => QuestionEffect.isCollide);
+        QuestionEffect.isCollide = false;
+
+        theDM.ShowDialogue();
     }
 }

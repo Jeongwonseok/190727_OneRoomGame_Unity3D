@@ -300,4 +300,7 @@
 /define:CSHARP_7_3_OR_NEWER
 "Assets/Scripts/Controller/InteracrionController.cs"
 "Assets/Scripts/Controller/PlayerController.cs"
+"Assets/Scripts/Effects/Disappear.cs"
+"Assets/Scripts/Effects/QuestionEffect.cs"
 "Assets/Scripts/Effects/Spin.cs"
+"Assets/Scripts/Manager/DialogueManager.cs"
