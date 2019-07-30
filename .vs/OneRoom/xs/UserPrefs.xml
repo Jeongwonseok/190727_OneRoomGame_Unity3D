@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Effects/Spin.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="19" Column="39" />
+      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="50" Column="46" />
+      <File FileName="Assets/Scripts/Effects/Spin.cs" Line="8" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,8 +10,9 @@
           <Node name="OneRoom" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Controller" expanded="True">
-                  <Node name="PlayerController.cs" selected="True" />
+                <Node name="Controller" expanded="True" />
+                <Node name="Effects" expanded="True">
+                  <Node name="Spin.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
