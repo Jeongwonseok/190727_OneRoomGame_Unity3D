@@ -14674,8 +14674,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: "\uBD09\uB780 \uC790\uAE30\uC18C\uAC1C"
-    line: {x: 1, y: 3}
+    line: {x: 1, y: 4}
     dialogues:
+    - name: 
+      contexts: []
     - name: 
       contexts: []
     - name: 
