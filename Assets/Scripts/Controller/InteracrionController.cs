@@ -21,12 +21,17 @@ public class InteracrionController : MonoBehaviour
 
     [SerializeField] ParticleSystem ps_QuestionEffect;
 
+    [SerializeField] Image img_Interaction;
+    [SerializeField] Image img_InteractionEffect;
+
     DialogueManager theDM;
 
     public void HideUI()
     {
         go_Cursor.SetActive(false);
         go_Crosshair.SetActive(false);
+        go_TargetNameBar.SetActive(false);
+
     }
 
     void Start()
@@ -37,8 +42,11 @@ public class InteracrionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckObject();
-        ClickLeftBtn();
+        if(!isInteract)
+        {
+            CheckObject();
+            ClickLeftBtn();
+        }
     }
 
     void CheckObject()
@@ -67,6 +75,11 @@ public class InteracrionController : MonoBehaviour
                 isContact = true;
                 go_InteractiveCrosshair.SetActive(true);
                 go_NormalCrosshair.SetActive(false);
+
+                StopCoroutine("Interaction");
+                StopCoroutine("InteractionEffect");
+                StartCoroutine("Interaction", true);
+                StartCoroutine("InteractionEffect");
             }
 
         }
@@ -86,6 +99,55 @@ public class InteracrionController : MonoBehaviour
             isContact = false;
             go_InteractiveCrosshair.SetActive(false);
             go_NormalCrosshair.SetActive(true);
+
+            StopCoroutine("Interaction");
+            StartCoroutine("Interaction", false);
+        }
+    }
+
+    IEnumerator Interaction(bool p_Appear)
+    {
+        Color color = img_Interaction.color;
+        if(p_Appear)
+        {
+            color.a = 0;
+            while(color.a < 1)
+            {
+                color.a += 0.1f;
+                img_Interaction.color = color;
+                yield return null;
+            }
+        }
+        else
+        {
+            while(color.a > 0)
+            {
+                color.a -= 0.1f;
+                img_Interaction.color = color;
+                yield return null;
+            }
+        }
+    }
+
+    IEnumerator InteractionEffect()
+    {
+        while(isContact && !isInteract)
+        {
+            Color color = img_InteractionEffect.color;
+            color.a = 0.5f;
+
+            img_InteractionEffect.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+            Vector3 t_scale = img_InteractionEffect.transform.localScale;
+
+            while (color.a > 0)
+            {
+                color.a -= 0.01f;
+                img_InteractionEffect.color = color;
+                t_scale.Set(t_scale.x + Time.deltaTime, t_scale.y + Time.deltaTime, t_scale.z + Time.deltaTime);
+                img_InteractionEffect.transform.localScale = t_scale;
+                yield return null;
+            }
+            yield return null;
         }
     }
 
@@ -106,6 +168,11 @@ public class InteracrionController : MonoBehaviour
     void Interact()
     {
         isInteract = true;
+
+        StopCoroutine("Interaction");
+        Color color = img_Interaction.color;
+        color.a = 0;
+        img_Interaction.color = color;
 
         ps_QuestionEffect.gameObject.SetActive(true);
         Vector3 t_targetPos = hitInfo.transform.position;
