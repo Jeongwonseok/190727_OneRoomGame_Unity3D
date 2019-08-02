@@ -1,13 +1,17 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Effects/QuestionEffect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/DatabaseManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="23" Column="1" />
       <File FileName="Assets/Scripts/Effects/Spin.cs" />
-      <File FileName="Assets/Scripts/Controller/InteracrionController.cs" />
       <File FileName="Assets/Scripts/Manager/DialogueManager.cs" />
-      <File FileName="Assets/Scripts/Effects/QuestionEffect.cs" Line="10" Column="46" />
+      <File FileName="Assets/Scripts/Effects/QuestionEffect.cs" Line="10" Column="47" />
       <File FileName="Assets/Scripts/Effects/Disappear.cs" />
-      <File FileName="Assets/Scripts/Interaction/InteractionType.cs" />
+      <File FileName="Assets/Scripts/Interaction/InteractionType.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Controller/InteracrionController.cs" Line="49" Column="10" />
+      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="11" Column="23" />
+      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueParser.cs" Line="45" Column="1" />
+      <File FileName="Assets/Scripts/Manager/DatabaseManager.cs" Line="7" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,11 +20,12 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Controller" expanded="True" />
-                <Node name="Effects" expanded="True">
-                  <Node name="QuestionEffect.cs" selected="True" />
-                </Node>
+                <Node name="Dialogue" expanded="True" />
+                <Node name="Effects" expanded="True" />
                 <Node name="Interaction" expanded="True" />
-                <Node name="Manager" expanded="True" />
+                <Node name="Manager" expanded="True">
+                  <Node name="DatabaseManager.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

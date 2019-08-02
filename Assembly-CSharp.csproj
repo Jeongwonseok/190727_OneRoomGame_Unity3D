@@ -64,10 +64,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controller\InteracrionController.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueParser.cs" />
     <Compile Include="Assets\Scripts\Effects\Disappear.cs" />
     <Compile Include="Assets\Scripts\Effects\QuestionEffect.cs" />
     <Compile Include="Assets\Scripts\Effects\Spin.cs" />
+    <Compile Include="Assets\Scripts\Interaction\InteractionEvent.cs" />
     <Compile Include="Assets\Scripts\Interaction\InteractionType.cs" />
+    <Compile Include="Assets\Scripts\Manager\DatabaseManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogueManager.cs" />
     <None Include="Assets\Imports\_Barking_Dog\Readme_Please.txt" />
     <Reference Include="Unity.Timeline.Editor">

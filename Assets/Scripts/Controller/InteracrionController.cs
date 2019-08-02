@@ -187,6 +187,6 @@ public class InteracrionController : MonoBehaviour
         yield return new WaitUntil(() => QuestionEffect.isCollide);
         QuestionEffect.isCollide = false;
 
-        theDM.ShowDialogue();
+        theDM.ShowDialogue(hitInfo.transform.GetComponent<InteractionEvent>().GetDialogue());
     }
 }

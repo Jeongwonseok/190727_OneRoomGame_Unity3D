@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Text txt_Dialogue;
     [SerializeField] Text txt_Name;
 
+    Dialogue[] dialogues;
+
     bool isDialogue = false;
 
     InteracrionController theIC;
@@ -21,11 +23,13 @@ public class DialogueManager : MonoBehaviour
         theIC = FindObjectOfType<InteracrionController>();  
     }
 
-    public void ShowDialogue()
+    public void ShowDialogue(Dialogue[] p_dialogues)
     {
         txt_Dialogue.text = "";
         txt_Name.text = "";
         theIC.HideUI();
+
+        dialogues = p_dialogues;
 
         SettingUI(true);
     }
