@@ -159,6 +159,10 @@ public class DialogueManager : MonoBehaviour
                 txt_Name.text = dialogues[lineCount].name;
             }
         }
+        else
+        {
+            go_DialogueNameBar.SetActive(false);
+        }
 
     }
 }

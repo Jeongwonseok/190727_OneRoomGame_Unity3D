@@ -15047,7 +15047,7 @@ MonoBehaviour:
       tf_Target: {fileID: 1377010813}
       name: 
       contexts: []
-    - cameraType: 0
+    - cameraType: 1
       tf_Target: {fileID: 2084715071}
       name: 
       contexts: []

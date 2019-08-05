@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour
     InteracrionController theIC;
     PlayerController thePlayer;
 
+    Coroutine coroutine;
+
     void Start()
     {
         theIC = FindObjectOfType<InteracrionController>();
@@ -24,17 +26,22 @@ public class CameraController : MonoBehaviour
 
     public void CameraTargetting(Transform p_Target, float p_CamSpeed = 0.05f, bool p_isReset = false, bool p_isFinish = false)
     {
-        StopAllCoroutines();
+       
 
         if(!p_isReset)
         {
             if (p_Target != null)
             {
-                StartCoroutine(CameraTargettingCoroutine(p_Target, p_CamSpeed));
+                StopAllCoroutines();
+                coroutine = StartCoroutine(CameraTargettingCoroutine(p_Target, p_CamSpeed));
             }
         }
         else
         {
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+            }
             StartCoroutine(CameraResetCoroutine(p_CamSpeed, p_isFinish));
         }
 
