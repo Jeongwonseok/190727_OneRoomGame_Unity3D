@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
     <Compile Include="Assets\Scripts\Controller\InteracrionController.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />

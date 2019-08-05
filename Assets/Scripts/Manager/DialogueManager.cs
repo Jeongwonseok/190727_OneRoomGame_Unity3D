@@ -24,10 +24,12 @@ public class DialogueManager : MonoBehaviour
     int contextCount = 0; // 대사 카운트
 
     InteracrionController theIC;
+    CameraController theCam;
 
     void Start()
     {
-        theIC = FindObjectOfType<InteracrionController>();  
+        theIC = FindObjectOfType<InteracrionController>();
+        theCam = FindObjectOfType<CameraController>();
     }
 
     void Update()
@@ -49,6 +51,7 @@ public class DialogueManager : MonoBehaviour
                         contextCount = 0;
                         if(++lineCount < dialogues.Length)
                         {
+                            theCam.CameraTargetting(dialogues[lineCount].tf_Target);
                             StartCoroutine(TypeWriter());
                         }
                         else
@@ -70,6 +73,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogues = p_dialogues;
 
+        theCam.CameraTargetting(dialogues[lineCount].tf_Target);
         StartCoroutine(TypeWriter());
     }
 
@@ -103,7 +107,6 @@ public class DialogueManager : MonoBehaviour
                 case 'ⓦ': t_white = true; t_yellow = false; t_cyan = false; t_ignore = true; break;
                 case 'ⓨ': t_white = false; t_yellow = true; t_cyan = false; t_ignore = true; break;
                 case 'ⓒ': t_white = false; t_yellow = false; t_cyan = true; t_ignore = true; break;
-                    
             }
 
             string t_letter = t_ReplaceText[i].ToString();

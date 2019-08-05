@@ -298,13 +298,15 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+"Assets/Scripts/Controller/CameraController.cs"
 "Assets/Scripts/Controller/InteracrionController.cs"
 "Assets/Scripts/Controller/PlayerController.cs"
 "Assets/Scripts/Dialogue/Dialogue.cs"
-"Assets/Scripts/Dialogue/Dialogueparser.cs"
+"Assets/Scripts/Dialogue/DialogueParser.cs"
 "Assets/Scripts/Effects/Disappear.cs"
 "Assets/Scripts/Effects/QuestionEffect.cs"
 "Assets/Scripts/Effects/Spin.cs"
 "Assets/Scripts/Interaction/InteractionEvent.cs"
 "Assets/Scripts/Interaction/InteractionType.cs"
+"Assets/Scripts/Manager/DatabaseManager.cs"
 "Assets/Scripts/Manager/DialogueManager.cs"

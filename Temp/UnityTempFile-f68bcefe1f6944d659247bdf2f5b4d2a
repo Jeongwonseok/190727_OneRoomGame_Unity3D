@@ -298,6 +298,7 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+"Assets/Scripts/Controller/CameraController.cs"
 "Assets/Scripts/Controller/InteracrionController.cs"
 "Assets/Scripts/Controller/PlayerController.cs"
 "Assets/Scripts/Dialogue/Dialogue.cs"
@@ -307,4 +308,5 @@
 "Assets/Scripts/Effects/Spin.cs"
 "Assets/Scripts/Interaction/InteractionEvent.cs"
 "Assets/Scripts/Interaction/InteractionType.cs"
+"Assets/Scripts/Manager/DatabaseManager.cs"
 "Assets/Scripts/Manager/DialogueManager.cs"

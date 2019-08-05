@@ -1,17 +1,10 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/DatabaseManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Interaction/InteractionEvent.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/Effects/Spin.cs" />
-      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" />
-      <File FileName="Assets/Scripts/Effects/QuestionEffect.cs" Line="10" Column="47" />
-      <File FileName="Assets/Scripts/Effects/Disappear.cs" />
-      <File FileName="Assets/Scripts/Interaction/InteractionType.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/Controller/InteracrionController.cs" Line="49" Column="10" />
-      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="11" Column="23" />
-      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" Line="5" Column="1" />
-      <File FileName="Assets/Scripts/Dialogue/DialogueParser.cs" Line="45" Column="1" />
-      <File FileName="Assets/Scripts/Manager/DatabaseManager.cs" Line="7" Column="19" />
+      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="15" Column="22" />
+      <File FileName="Assets/Scripts/Controller/CameraController.cs" Line="13" Column="10" />
+      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" Line="76" Column="65" />
+      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,10 +15,10 @@
                 <Node name="Controller" expanded="True" />
                 <Node name="Dialogue" expanded="True" />
                 <Node name="Effects" expanded="True" />
-                <Node name="Interaction" expanded="True" />
-                <Node name="Manager" expanded="True">
-                  <Node name="DatabaseManager.cs" selected="True" />
+                <Node name="Interaction" expanded="True">
+                  <Node name="InteractionEvent.cs" selected="True" />
                 </Node>
+                <Node name="Manager" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -35,7 +28,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="97ffc9d8-0cfb-47cf-8e98-3e5e4d461abf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6f79189e-c04b-442e-820c-ee1ad61db6b5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
