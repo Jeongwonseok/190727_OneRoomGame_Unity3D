@@ -51,12 +51,12 @@ public class DialogueManager : MonoBehaviour
                         contextCount = 0;
                         if(++lineCount < dialogues.Length)
                         {
-                            theCam.CameraTargetting(dialogues[lineCount].tf_Target);
-                            StartCoroutine(TypeWriter());
+                            CameraTargettingType();
                         }
                         else
                         {
                             EndDialogue();
+
                         }
                     }
                 }
@@ -72,8 +72,18 @@ public class DialogueManager : MonoBehaviour
         theIC.SettingUI(false);
 
         dialogues = p_dialogues;
+        theCam.CamOriginSetting();
 
-        theCam.CameraTargetting(dialogues[lineCount].tf_Target);
+        CameraTargettingType();
+    }
+
+    void CameraTargettingType()
+    {
+        switch(dialogues[lineCount].cameraType)
+        {
+            case CameraType.ObjectFront: theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
+            case CameraType.Reset: theCam.CameraTargetting(null, 0.05f, true, false); break;
+        }
         StartCoroutine(TypeWriter());
     }
 
@@ -84,7 +94,9 @@ public class DialogueManager : MonoBehaviour
         lineCount = 0;
         dialogues = null;
         isNext = false;
-        theIC.SettingUI(true);
+
+        theCam.CameraTargetting(null, 0.05f, true, true);
+
         SettingUI(false);
     }
 
