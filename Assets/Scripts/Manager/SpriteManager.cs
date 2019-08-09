@@ -16,21 +16,27 @@ public class SpriteManager : MonoBehaviour
 
     public IEnumerator SpriteChangeCoroutine(Transform p_Target, string p_SpriteName)
     {
-        SpriteRenderer t_SpriteRenderer = p_Target.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer[] t_SpriteRenderer = p_Target.GetComponentsInChildren<SpriteRenderer>();
         Sprite t_Sprite = Resources.Load("Characters/" + p_SpriteName, typeof(Sprite)) as Sprite;
 
-        if(!CheckSameSprite(t_SpriteRenderer, t_Sprite))
+        if(!CheckSameSprite(t_SpriteRenderer[0], t_Sprite))
         {
-            Color t_color = t_SpriteRenderer.color;
+            Color t_color = t_SpriteRenderer[0].color;
+            Color t_ShadowColor = t_SpriteRenderer[1].color;
             t_color.a = 0;
-            t_SpriteRenderer.color = t_color;
+            t_ShadowColor.a = 0;
+            t_SpriteRenderer[0].color = t_color;
+            t_SpriteRenderer[1].color = t_ShadowColor;
 
-            t_SpriteRenderer.sprite = t_Sprite;
+            t_SpriteRenderer[0].sprite = t_Sprite;
+            t_SpriteRenderer[1].sprite = t_Sprite;
 
-            while(t_color.a < 1)
+            while (t_color.a < 1)
             {
                 t_color.a += fadeSpeed;
-                t_SpriteRenderer.color = t_color;
+                t_ShadowColor.a += fadeSpeed;
+                t_SpriteRenderer[0].color = t_color;
+                t_SpriteRenderer[1].color = t_ShadowColor;
                 yield return null;
             }
         }
