@@ -21,6 +21,9 @@ public class Dialogue
 
     [HideInInspector]
     public string[] contexts;
+
+    [HideInInspector]
+    public string[] spriteName;
 }
 
 [System.Serializable]

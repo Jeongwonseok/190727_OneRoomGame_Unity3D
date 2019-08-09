@@ -310,3 +310,4 @@
 "Assets/Scripts/Interaction/InteractionType.cs"
 "Assets/Scripts/Manager/DatabaseManager.cs"
 "Assets/Scripts/Manager/DialogueManager.cs"
+"Assets/Scripts/Manager/SpriteManager.cs"

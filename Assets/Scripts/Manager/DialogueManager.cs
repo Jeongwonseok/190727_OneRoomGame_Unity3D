@@ -25,11 +25,13 @@ public class DialogueManager : MonoBehaviour
 
     InteracrionController theIC;
     CameraController theCam;
+    SpriteManager theSpriteManager;
 
     void Start()
     {
         theIC = FindObjectOfType<InteracrionController>();
         theCam = FindObjectOfType<CameraController>();
+        theSpriteManager = FindObjectOfType<SpriteManager>();
     }
 
     void Update()
@@ -100,9 +102,20 @@ public class DialogueManager : MonoBehaviour
         SettingUI(false);
     }
 
+    void ChangeSprite()
+    {
+        if(dialogues[lineCount].spriteName[contextCount] != "")
+        {
+            StartCoroutine(theSpriteManager.SpriteChangeCoroutine(
+                                            dialogues[lineCount].tf_Target,
+                                            dialogues[lineCount].spriteName[contextCount]));
+        }
+    }
+
     IEnumerator TypeWriter()
     {
         SettingUI(true);
+        ChangeSprite();
 
         string t_ReplaceText = dialogues[lineCount].contexts[contextCount];
         t_ReplaceText = t_ReplaceText.Replace("'", ",");

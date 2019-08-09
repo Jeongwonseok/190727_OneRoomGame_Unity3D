@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/SpriteManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="16" Column="34" />
-      <File FileName="Assets/Scripts/Controller/CameraController.cs" Line="14" Column="59" />
-      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" Line="99" Column="1" />
-      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" Line="18" Column="93" />
-      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="16" Column="21" />
+      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="26" Column="32" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueParser.cs" Line="42" Column="45" />
+      <File FileName="Assets/Scripts/Controller/CameraController.cs" />
+      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" Line="164" Column="47" />
+      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" />
+      <File FileName="Assets/Scripts/Controller/PlayerController.cs" />
+      <File FileName="Assets/Scripts/Manager/SpriteManager.cs" Line="7" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,13 +15,13 @@
           <Node name="OneRoom" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Controller" expanded="True">
-                  <Node name="PlayerController.cs" selected="True" />
-                </Node>
+                <Node name="Controller" expanded="True" />
                 <Node name="Dialogue" expanded="True" />
                 <Node name="Effects" expanded="True" />
                 <Node name="Interaction" expanded="True" />
-                <Node name="Manager" expanded="True" />
+                <Node name="Manager" expanded="True">
+                  <Node name="SpriteManager.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -29,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6f79189e-c04b-442e-820c-ee1ad61db6b5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bf37f7e5-a3e9-42e6-8704-91aa3ce0351d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
