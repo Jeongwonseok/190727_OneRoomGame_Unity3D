@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Interaction\InteractionType.cs" />
     <Compile Include="Assets\Scripts\Manager\DatabaseManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\SplashManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SpriteManager.cs" />
     <None Include="Assets\Imports\_Barking_Dog\Readme_Please.txt" />
     <Reference Include="Unity.Timeline.Editor">

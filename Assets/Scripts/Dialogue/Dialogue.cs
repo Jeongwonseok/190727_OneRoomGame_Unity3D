@@ -6,6 +6,10 @@ public enum CameraType
 {
     ObjectFront,
     Reset,
+    FadeOut,
+    FadeIn,
+    FlashOut,
+    FlashIn,
 }
 
 [System.Serializable]
