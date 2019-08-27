@@ -16,6 +16,14 @@ public class SplashManager : MonoBehaviour
 
     public static bool isFinished = false;
 
+    public IEnumerator Splash()
+    {
+        StartCoroutine(FadeOut(true, false));
+        yield return new WaitUntil(() => isFinished);
+        isFinished = false;
+        StartCoroutine(FadeIn(true, false));
+    }
+
     public IEnumerator FadeOut(bool _isWhite, bool _isSlow)
     {
         Color t_Color = (_isWhite == true) ? colorWhite : colorBlack;

@@ -119,10 +119,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    void PlaySound()
+    {
+        if(dialogues[lineCount].voiceName[contextCount] != "")
+        {
+            SoundManager.instance.PlaySound(dialogues[lineCount].voiceName[contextCount], 2);
+        }
+    }
+
     IEnumerator TypeWriter()
     {
         SettingUI(true);
         ChangeSprite();
+        PlaySound();
 
         string t_ReplaceText = dialogues[lineCount].contexts[contextCount];
         t_ReplaceText = t_ReplaceText.Replace("'", ",");
@@ -139,6 +148,8 @@ public class DialogueManager : MonoBehaviour
                 case 'ⓦ': t_white = true; t_yellow = false; t_cyan = false; t_ignore = true; break;
                 case 'ⓨ': t_white = false; t_yellow = true; t_cyan = false; t_ignore = true; break;
                 case 'ⓒ': t_white = false; t_yellow = false; t_cyan = true; t_ignore = true; break;
+                case '①': StartCoroutine(theSplashManager.Splash()); SoundManager.instance.PlaySound("Emotion1", 1); t_ignore = true; break;
+                case '②': StartCoroutine(theSplashManager.Splash()); SoundManager.instance.PlaySound("Emotion2", 1); t_ignore = true; break;
             }
 
             string t_letter = t_ReplaceText[i].ToString();
