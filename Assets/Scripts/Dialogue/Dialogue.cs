@@ -10,6 +10,8 @@ public enum CameraType
     FadeIn,
     FlashOut,
     FlashIn,
+    ShowCutScene,
+    HideCutScene,
 }
 
 [System.Serializable]

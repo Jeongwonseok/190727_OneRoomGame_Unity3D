@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Effects\Spin.cs" />
     <Compile Include="Assets\Scripts\Interaction\InteractionEvent.cs" />
     <Compile Include="Assets\Scripts\Interaction\InteractionType.cs" />
+    <Compile Include="Assets\Scripts\Manager\CutSceneManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DatabaseManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />

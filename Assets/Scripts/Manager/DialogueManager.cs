@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     CameraController theCam;
     SplashManager theSplashManager;
     SpriteManager theSpriteManager;
+    CutSceneManager theCutSceneManager;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class DialogueManager : MonoBehaviour
         theCam = FindObjectOfType<CameraController>();
         theSpriteManager = FindObjectOfType<SpriteManager>();
         theSplashManager = FindObjectOfType<SplashManager>();
+        theCutSceneManager = FindObjectOfType<CutSceneManager>();
     }
 
     void Update()
@@ -92,6 +94,8 @@ public class DialogueManager : MonoBehaviour
             case CameraType.FlashOut: SettingUI(false); SplashManager.isFinished = false; StartCoroutine(theSplashManager.FadeOut(true, true)); yield return new WaitUntil(() => SplashManager.isFinished); break;
             case CameraType.ObjectFront: theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
             case CameraType.Reset: theCam.CameraTargetting(null, 0.05f, true, false); break;
+            case CameraType.ShowCutScene: SettingUI(false); CutSceneManager.isFinished = false; StartCoroutine(theCutSceneManager.CutSceneCoroutine(dialogues[lineCount].spriteName[contextCount], true)); yield return new WaitUntil(() => CutSceneManager.isFinished); break;
+            case CameraType.HideCutScene: SettingUI(false); CutSceneManager.isFinished = false; StartCoroutine(theCutSceneManager.CutSceneCoroutine(null, false)); yield return new WaitUntil(() => CutSceneManager.isFinished); theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
         }
         StartCoroutine(TypeWriter());
     }
@@ -111,11 +115,14 @@ public class DialogueManager : MonoBehaviour
 
     void ChangeSprite()
     {
-        if(dialogues[lineCount].spriteName[contextCount] != "")
+        if (dialogues[lineCount].cameraType == CameraType.ObjectFront)
         {
-            StartCoroutine(theSpriteManager.SpriteChangeCoroutine(
-                                            dialogues[lineCount].tf_Target,
-                                            dialogues[lineCount].spriteName[contextCount]));
+            if (dialogues[lineCount].spriteName[contextCount] != "")
+            {
+                StartCoroutine(theSpriteManager.SpriteChangeCoroutine(
+                                                dialogues[lineCount].tf_Target,
+                                                dialogues[lineCount].spriteName[contextCount]));
+            }
         }
     }
 

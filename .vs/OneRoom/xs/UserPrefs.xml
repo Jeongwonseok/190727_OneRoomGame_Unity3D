@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/SplashManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/CutSceneManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="32" Column="22" />
-      <File FileName="Assets/Scripts/Dialogue/DialogueParser.cs" Line="46" Column="46" />
-      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" Line="154" Column="1" />
-      <File FileName="Assets/Scripts/Controller/CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Manager/SpriteManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Effects/Spin.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Manager/SplashManager.cs" Line="22" Column="54" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueParser.cs" />
+      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" />
+      <File FileName="Assets/Scripts/Controller/CameraController.cs" />
+      <File FileName="Assets/Scripts/Manager/SpriteManager.cs" />
+      <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" />
+      <File FileName="Assets/Scripts/Controller/PlayerController.cs" />
+      <File FileName="Assets/Scripts/Effects/Spin.cs" />
+      <File FileName="Assets/Scripts/Manager/SplashManager.cs" />
       <File FileName="Assets/Scripts/Manager/SoundManager.cs" Line="99" Column="66" />
+      <File FileName="Assets/Scripts/Manager/CutSceneManager.cs" Line="7" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +24,7 @@
                 <Node name="Effects" expanded="True" />
                 <Node name="Interaction" expanded="True" />
                 <Node name="Manager" expanded="True">
-                  <Node name="SplashManager.cs" selected="True" />
+                  <Node name="CutSceneManager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -34,7 +35,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b80d5a95-bd8b-4d96-88c9-1bd0816939fb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f55810d2-e91b-4681-af2d-05aa31db88e4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
