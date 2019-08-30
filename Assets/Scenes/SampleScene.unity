@@ -15780,14 +15780,14 @@ MonoBehaviour:
       contexts: []
       spriteName: []
       voiceName: []
-    - cameraType: 7
+    - cameraType: 0
       tf_Target: {fileID: 0}
       name: 
       contexts: []
       spriteName: []
       voiceName: []
     - cameraType: 0
-      tf_Target: {fileID: 2084715071}
+      tf_Target: {fileID: 0}
       name: 
       contexts: []
       spriteName: []

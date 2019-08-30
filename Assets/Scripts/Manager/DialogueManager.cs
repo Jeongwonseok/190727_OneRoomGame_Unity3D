@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
                         }
                         else
                         {
-                            EndDialogue();
+                            StartCoroutine(EndDialogue());
 
                         }
                     }
@@ -100,8 +100,15 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeWriter());
     }
 
-    void EndDialogue()
+    IEnumerator EndDialogue()
     {
+        SettingUI(false);
+        if(theCutSceneManager.CheckCutScene())
+        {
+            CutSceneManager.isFinished = false;
+            StartCoroutine(theCutSceneManager.CutSceneCoroutine(null, false));
+            yield return new WaitUntil(() => CutSceneManager.isFinished);
+        }
         isDialogue = false;
         contextCount = 0;
         lineCount = 0;
@@ -115,7 +122,7 @@ public class DialogueManager : MonoBehaviour
 
     void ChangeSprite()
     {
-        if (dialogues[lineCount].cameraType == CameraType.ObjectFront)
+        if (dialogues[lineCount].tf_Target != null)
         {
             if (dialogues[lineCount].spriteName[contextCount] != "")
             {
