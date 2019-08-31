@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     SplashManager theSplashManager;
     SpriteManager theSpriteManager;
     CutSceneManager theCutSceneManager;
+    SlideManager theSlideManager;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour
         theSpriteManager = FindObjectOfType<SpriteManager>();
         theSplashManager = FindObjectOfType<SplashManager>();
         theCutSceneManager = FindObjectOfType<CutSceneManager>();
+        theSlideManager = FindObjectOfType<SlideManager>();
     }
 
     void Update()
@@ -96,8 +98,25 @@ public class DialogueManager : MonoBehaviour
             case CameraType.Reset: theCam.CameraTargetting(null, 0.05f, true, false); break;
             case CameraType.ShowCutScene: SettingUI(false); CutSceneManager.isFinished = false; StartCoroutine(theCutSceneManager.CutSceneCoroutine(dialogues[lineCount].spriteName[contextCount], true)); yield return new WaitUntil(() => CutSceneManager.isFinished); break;
             case CameraType.HideCutScene: SettingUI(false); CutSceneManager.isFinished = false; StartCoroutine(theCutSceneManager.CutSceneCoroutine(null, false)); yield return new WaitUntil(() => CutSceneManager.isFinished); theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
+            case CameraType.AppearSlideCG: SlideManager.isFinished = false; StartCoroutine(theSlideManager.AppearSlide(SplitSlideCGName())); yield return new WaitUntil(() => SlideManager.isFinished); theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
+            case CameraType.DisappearSlideCG: SlideManager.isFinished = false; StartCoroutine(theSlideManager.DisappearSlide()); yield return new WaitUntil(() => SlideManager.isFinished); theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
+            case CameraType.ChangeSlideCG: SlideManager.isChanged = false; StartCoroutine(theSlideManager.ChangeSlide(SplitSlideCGName())); yield return new WaitUntil(() => SlideManager.isChanged); theCam.CameraTargetting(dialogues[lineCount].tf_Target); break;
         }
         StartCoroutine(TypeWriter());
+    }
+
+    string SplitSlideCGName()
+    {
+        string t_Text = dialogues[lineCount].spriteName[contextCount];
+        string[] t_Array = t_Text.Split(new char[] { '/' });
+        if(t_Array.Length <= 1)
+        {
+            return t_Array[0];
+        }
+        else
+        {
+            return t_Array[1];
+        }
     }
 
     IEnumerator EndDialogue()
@@ -128,7 +147,7 @@ public class DialogueManager : MonoBehaviour
             {
                 StartCoroutine(theSpriteManager.SpriteChangeCoroutine(
                                                 dialogues[lineCount].tf_Target,
-                                                dialogues[lineCount].spriteName[contextCount]));
+                                                dialogues[lineCount].spriteName[contextCount].Split(new char[] {'/'})[0]));
             }
         }
     }

@@ -311,6 +311,7 @@
 "Assets/Scripts/Manager/CutSceneManager.cs"
 "Assets/Scripts/Manager/DatabaseManager.cs"
 "Assets/Scripts/Manager/DialogueManager.cs"
+"Assets/Scripts/Manager/SlideManager.cs"
 "Assets/Scripts/Manager/SoundManager.cs"
 "Assets/Scripts/Manager/SplashManager.cs"
 "Assets/Scripts/Manager/SpriteManager.cs"

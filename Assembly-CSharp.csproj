@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Manager\CutSceneManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DatabaseManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\SlideManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SplashManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SpriteManager.cs" />
