@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{B5B7F35B-8A27-BCDE-F7CF-D4B5DAAF0B99}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/SlideManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/DialogueManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="14" Column="18" />
+      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="18" Column="2" />
       <File FileName="Assets/Scripts/Dialogue/DialogueParser.cs" />
-      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" Line="125" Column="48" />
+      <File FileName="Assets/Scripts/Manager/DialogueManager.cs" Line="88" Column="1" />
       <File FileName="Assets/Scripts/Controller/CameraController.cs" />
       <File FileName="Assets/Scripts/Manager/SpriteManager.cs" />
       <File FileName="Assets/Scripts/Interaction/InteractionEvent.cs" />
@@ -12,7 +12,7 @@
       <File FileName="Assets/Scripts/Manager/SplashManager.cs" />
       <File FileName="Assets/Scripts/Manager/SoundManager.cs" />
       <File FileName="Assets/Scripts/Manager/CutSceneManager.cs" />
-      <File FileName="Assets/Scripts/Manager/SlideManager.cs" Line="7" Column="22" />
+      <File FileName="Assets/Scripts/Manager/SlideManager.cs" Line="21" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +25,7 @@
                 <Node name="Effects" expanded="True" />
                 <Node name="Interaction" expanded="True" />
                 <Node name="Manager" expanded="True">
-                  <Node name="SlideManager.cs" selected="True" />
+                  <Node name="DialogueManager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
